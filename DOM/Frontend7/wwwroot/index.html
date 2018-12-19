@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Practice 8</title>
+        <style>
+            * {
+                margin: 0;
+            }
+
+            .item {
+                font-size: 0;
+            }
+
+            .item button,
+            .item input[type="text"] {
+                font-size: 13px;
+            }
+        </style>
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    <body>
+        <div class="list">
+            <div class="item">
+                <input type="text" class="key-input" />
+                <input type="text" class="value-input" />
+                <button type="button" class="up-button">↑</button>
+                <button type="button" class="down-button">↓</button>
+                <button type="button" class="delete-button">x</button>
+            </div>
+        </div>
+        <div class="add-panel">
+            <button type="button" class="add-button">Добавить элемент</button>
+        </div>
+        <div class="save-panel">
+            <button type="button" class="save-button">Сохранить</button>
+        </div>
+        <pre class="result"></pre>
+    </body>
+</html>
