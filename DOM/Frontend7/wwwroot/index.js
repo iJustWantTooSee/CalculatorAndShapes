@@ -4,16 +4,14 @@ $(window).load(function () {
     const result = $('.result');
     const tempLine = firstElement.clone();
     //console.log(list.children().first().children().eq(2));
-
-    list.children().first().children().eq(2).on('click', RaiseElement);
-    list.children().first().children().eq(3).on('click', DropElement);
-    list.children().first().children().eq(4).on('click', DeleteElement);
+    $('.list .item')
+    $('.up-button').on('click', RaiseElement);
+    $('.down-button').on('click', DropElement);
+    $('.delete-button').on('click', DeleteElement);
     $('.add-button').on('click', CreateElement);
     $('.save-button').on('click', SaveElement);
 
     function RaiseElement(event) {
-        console.log(list.children().first());
-        console.log($(event.target).parent().prev());
         if (list.children().first() != $(event.target).parent()) {
             $(event.target).parent().after($(event.target).parent().prev());
         }
@@ -48,7 +46,7 @@ $(window).load(function () {
         let input = {};
         
         for (var i = 0; i < listChildren.length; i++) {
-            console.log(listChildren.eq(i).children().eq(0).val()); 
+           // console.log(listChildren.eq(i).children().eq(0).val()); 
             input[listChildren.eq(i).children().eq(0).val()] = listChildren.eq(i).children().eq(1).val();
         }
         result.html(JSON.stringify(input));

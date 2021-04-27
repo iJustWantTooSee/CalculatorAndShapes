@@ -67,6 +67,7 @@
                 }
                 else {
                     computation = 'Eror';
+                    voice();
                 }
                 break
             default:
@@ -107,6 +108,9 @@
 
 }
 
+function voice() {
+    speechSynthesis.speak(new SpeechSynthesisUtterance('Слышь, ты куда на 0 делишь! Я тебе ща поделю'));
+}
 
 $(window).load(function () {
     const allButtons = $('.calc-button');
@@ -117,6 +121,8 @@ $(window).load(function () {
     var operation = /\-|\+|\*|\//g
 
     allButtons.click(function () {
+        console.log($(this).text());
+        console.log($(this).text().match(number));
         if ($(this).text() == $(this).text().match(number)) {
             calculator.appendNumber($(this).text());
             calculator.updateOnDisplay();
@@ -152,7 +158,7 @@ $(window).load(function () {
             calculator.clear()
             calculator.updateOnDisplay();
         }
-        if ($(this).text() == '<-') {
+        if ($(this).text() == '&lt;-') {
             calculator.delete()
             calculator.updateOnDisplay();
         }
